@@ -6,14 +6,25 @@
 #define LED_PIN                 PINB
 #define LED_DDR                 DDRB
 
-#define LED0                    PB0
-#define LED1                    PB1
-#define LED2                    PB2
-#define LED3                    PB3
-#define LED4                    PB4
-#define LED5                    PB5
-#define LED6                    PB6
-#define LED7                    PB7
+#ifdef __AVR_ATmega328PB__
+	#define LED0                    PD0
+	#define LED1                    PD1
+	#define LED2                    PD2
+	#define LED3                    PD3
+	#define LED4                    PD4
+	#define LED5                    PD5
+	#define LED6                    PD6
+	#define LED7                    PD7
+#else
+	#define LED0                    PB0
+	#define LED1                    PB1
+	#define LED2                    PB2
+	#define LED3                    PB3
+	#define LED4                    PB4
+	#define LED5                    PB5
+	#define LED6                    PB6
+	#define LED7                    PB7
+#endif
 
 #define BUTTON_PORT             PORTD
 #define BUTTON_PIN              PIND
